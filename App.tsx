@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./src/Navigation/Sidebar";
 
 export default function App() {
   return (

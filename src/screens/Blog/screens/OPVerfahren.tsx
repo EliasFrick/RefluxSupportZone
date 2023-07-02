@@ -1,10 +1,10 @@
 import React from "react";
 import {View, Text} from "react-native";
 
-export default function Blog() {
+export default function OPVerfahren() {
     return(
         <View>
-            <Text>Blog</Text>
+            <Text>OPVerfahren</Text>
         </View>
     )
 }
