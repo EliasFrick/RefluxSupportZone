@@ -1,63 +1,99 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import {NavigationContainer} from "@react-navigation/native";
+import {createDrawerNavigator} from "@react-navigation/drawer";
 import CustomDrawer from "./CustomDrawer";
 //Import Screens
+import StartScreen from "../screens/StartScreen";
 import ChooseBlogScreen from "./ChooseBlogScreen";
-import Blog from "../screens/Blog/Blog";
 import Exercises from "../screens/Exercises";
 import Nutrition from "../screens/Nutrition";
+import {StyleSheet, View} from "react-native";
+// @ts-ignore
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const Drawer = createDrawerNavigator();
 
 const Sidebar = () => {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        drawerContent={(CustomDrawerProps) => (
-          <CustomDrawer {...CustomDrawerProps} />
-        )}
-        screenOptions={{
-          drawerActiveBackgroundColor: "#aa1Bea",
-          drawerActiveTintColor: "#fff",
-          drawerInactiveTintColor: "#333",
-          drawerLabelStyle: { marginLeft: -25, fontSize: 15 },
-        }}
-      >
-        <Drawer.Screen
-          key={"Blog"}
-          name={"Blog"}
-          component={ChooseBlogScreen}
-          options={{
-            drawerIcon: () => (
-              <FontAwesome name={"info"} size={32} color="black" />
-            ),
-          }}
-        />
-        <Drawer.Screen
-          key={"Exercises"}
-          name={"Übungen"}
-          component={Exercises}
-          options={{
-            drawerIcon: () => (
-              <FontAwesome name={"train"} size={32} color="black" />
-            ),
-          }}
-        />
-        <Drawer.Screen
-          key={"Nutrition"}
-          name={"Ernährung"}
-          component={Nutrition}
-          options={{
-            drawerIcon: () => (
-              <FontAwesome name={"apple"} size={32} color="black" />
-            ),
-          }}
-        />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Drawer.Navigator
+                drawerContent={(CustomDrawerProps) => (
+                    <CustomDrawer {...CustomDrawerProps} />
+                )}
+                screenOptions={{
+                    drawerActiveBackgroundColor: "#aa1Bea",
+                    drawerActiveTintColor: "#fff",
+                    drawerInactiveTintColor: "#333",
+                    drawerLabelStyle: {
+                        marginLeft: 0, // Set the left margin to 0
+                        fontSize: 15,
+                        textAlign: 'left',
+                    },
+                }}
+            >
+                <Drawer.Screen
+                    key={"StartSeite"}
+                    name={"Start"}
+                    component={StartScreen}
+                    options={{
+                        drawerIcon: () => (
+                            <View style={styles.iconContainer}>
+                                <Icon name="home-outline" size={22} color="black"/>
+                            </View>
+
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    key={"Blog"}
+                    name={"Blog"}
+                    component={ChooseBlogScreen}
+                    options={{
+                        drawerIcon: () => (
+                            <View style={styles.iconContainer}>
+                                <Icon name={"information-outline"} size={32} color="black"/>
+                            </View>
+
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    key={"Exercises"}
+                    name={"Übungen"}
+                    component={Exercises}
+                    options={{
+                        drawerIcon: () => (
+                            <View style={styles.iconContainer}>
+                                <Icon name={"barbell-outline"} size={32} color="black"/>
+                            </View>
+
+                        ),
+                    }}
+                />
+                <Drawer.Screen
+                    key={"Nutrition"}
+                    name={"Ernährung"}
+                    component={Nutrition}
+                    options={{
+                        drawerIcon: () => (
+                            <View style={styles.iconContainer}>
+                                <Icon name={"fast-food-outline"} size={32} color={"black"}/>
+                            </View>
+                        ),
+                    }}
+                />
+            </Drawer.Navigator>
+        </NavigationContainer>
+    );
 };
 
 export default Sidebar;
+
+const styles = StyleSheet.create({
+    iconContainer: {
+        marginRight: -15,
+        width: 32, // anpassen, je nachdem wie breit das Icon sein soll
+        alignItems: 'flex-start',
+    },
+})
