@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View} from "react-native";
-import {refluxBeschreibung, wasIstReflux, unterstuetzendeMassnahmen, beschreibungUnterstuetzendeMassnahmen} from "../../constants/BlogTexts";
-import StandartButton from "../../components/StandartButton";
-import { StackNavigationProp } from '@react-navigation/stack';
+import {ScrollView, StyleSheet, View} from "react-native";
+import {StackNavigationProp} from '@react-navigation/stack';
 import {BlogScreen} from "../../types/StackSreens";
+import Card from "../../components/Card";
 
 type ChooseBlogScreen = StackNavigationProp<BlogScreen, 'BlogScreen'>;
 
@@ -11,7 +10,7 @@ type Props = {
     navigation: ChooseBlogScreen;
 };
 
-const Blog: React.FC<Props> = ({ navigation }) => {
+const Blog: React.FC<Props> = ({navigation}) => {
 
     const navigateToWhatIsRefluxScreen = () => {
         navigation.navigate('RefluxInformationen');
@@ -28,12 +27,25 @@ const Blog: React.FC<Props> = ({ navigation }) => {
     const navigateToMedikamenteScreen = () => {
         navigation.navigate('Medikamente');
     };
+
+    function test() {
+        alert("Test")
+    }
+
+    const RefluxLogo = require('../../assets/Reflux-Logo.png');
+    const MedicationLogo = require('../../assets/Medikament-Logo.png');
+    const DoctorsLogo = require('../../assets/Arzt-Logo.png');
+    const OPLogo = require('../../assets/Operation- Logo.png');
+    const Chirugie = require('../../assets/Chirugie.png')
+
     return (
         <View>
-            <StandartButton text={'What is Reflux'} onPress={navigateToWhatIsRefluxScreen} />
-            <StandartButton text={'Ärzte'} onPress={navigateToDoctorScreen} />
-            <StandartButton text={'OP Verfahren'} onPress={navigateToOPVerfahrenScreen} />
-            <StandartButton text={'Medikamente'} onPress={navigateToMedikamenteScreen} />
+            <ScrollView>
+                <Card title={'What is Reflux'} BulletList1={'All informations about Reflux'} image={RefluxLogo} onPress={navigateToWhatIsRefluxScreen} color={'#0995ea'}/>
+                <Card title={'Ärzte'} BulletList1={'Testimonials with doctors'} image={DoctorsLogo} onPress={navigateToDoctorScreen} color={'#fe635f'}/>
+                <Card title={'OP Verfahren'} image={Chirugie} onPress={navigateToOPVerfahrenScreen} color={'#05d4b8'}/>
+                <Card title={'Medication'} image={MedicationLogo} onPress={navigateToMedikamenteScreen} color={'red'}/>
+            </ScrollView>
         </View>
     );
 }
