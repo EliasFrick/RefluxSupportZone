@@ -1,6 +1,6 @@
 export type BlogScreen = {
     BlogScreen: undefined
-    RefluxInformationen: undefined;
+    RefluxInformations: undefined;
     Doctor: undefined;
     OPVerfahren: undefined;
     Medikamente: undefined;

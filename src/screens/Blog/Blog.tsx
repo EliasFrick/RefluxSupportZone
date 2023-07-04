@@ -13,7 +13,7 @@ type Props = {
 const Blog: React.FC<Props> = ({navigation}) => {
 
     const navigateToWhatIsRefluxScreen = () => {
-        navigation.navigate('RefluxInformationen');
+        navigation.navigate('RefluxInformations');
     };
 
     const navigateToDoctorScreen = () => {
@@ -28,23 +28,18 @@ const Blog: React.FC<Props> = ({navigation}) => {
         navigation.navigate('Medikamente');
     };
 
-    function test() {
-        alert("Test")
-    }
-
-    const RefluxLogo = require('../../assets/Reflux-Logo.png');
-    const MedicationLogo = require('../../assets/Medikament-Logo.png');
-    const DoctorsLogo = require('../../assets/Arzt-Logo.png');
-    const OPLogo = require('../../assets/Operation- Logo.png');
-    const Chirugie = require('../../assets/Chirugie.png')
+    const RefluxLogo = require('../../assets/pictures/Reflux-Logo.png');
+    const MedicationLogo = require('../../assets/pictures/Medikament-Logo.png');
+    const DoctorsLogo = require('../../assets/pictures/Arzt-Logo.png');
+    const OPLogo = require('../../assets/pictures/Chirugie.png')
 
     return (
         <View>
             <ScrollView>
-                <Card title={'What is Reflux'} BulletList1={'All informations about Reflux'} image={RefluxLogo} onPress={navigateToWhatIsRefluxScreen} color={'#0995ea'}/>
-                <Card title={'Ärzte'} BulletList1={'Testimonials with doctors'} image={DoctorsLogo} onPress={navigateToDoctorScreen} color={'#fe635f'}/>
-                <Card title={'OP Verfahren'} image={Chirugie} onPress={navigateToOPVerfahrenScreen} color={'#05d4b8'}/>
-                <Card title={'Medication'} image={MedicationLogo} onPress={navigateToMedikamenteScreen} color={'red'}/>
+                <Card title={'What is Reflux'} BulletList1={'• All informations about Reflux'} image={RefluxLogo} onPress={navigateToWhatIsRefluxScreen} color={'#0995ea'}/>
+                <Card title={'Ärzte'} BulletList1={'• Testimonials with doctors'} image={DoctorsLogo} onPress={navigateToDoctorScreen} color={'#fe635f'}/>
+                <Card title={'OP Verfahren'} BulletList1={'• Tips for the operation'} image={OPLogo} onPress={navigateToOPVerfahrenScreen} color={'#05d4b8'}/>
+                <Card title={'Medication'} BulletList1={'• Best Medications'} image={MedicationLogo} onPress={navigateToMedikamenteScreen} color={'red'}/>
             </ScrollView>
         </View>
     );
@@ -52,21 +47,3 @@ const Blog: React.FC<Props> = ({navigation}) => {
 
 export default Blog;
 
-const styles = StyleSheet.create({
-    mainTitle: {
-        fontSize: 30,
-        marginBottom: 30,
-        textAlign: 'center'
-    },
-    descriptionText: {
-        padding: 10,
-        marginLeft: 15,
-        marginRight: 15,
-    },
-    Title: {
-        marginTop: 50,
-        fontSize: 30,
-        marginBottom: 30,
-        textAlign: 'center'
-    },
-})

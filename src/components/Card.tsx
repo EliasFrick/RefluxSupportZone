@@ -1,5 +1,7 @@
 import React from "react";
 import {Image, ImageSourcePropType, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Dimensions} from "react-native";
+
 const Card = (props: CardProps) => {
 
     return (
@@ -8,14 +10,12 @@ const Card = (props: CardProps) => {
                     <View style={[styles.button, {backgroundColor: props.color}]}>
                         <Text style={styles.buttonText}>{props.title}</Text>
                         <View style={styles.underline} />
-                        <View>
-                            <Text style={styles.BulletList}>• {props.BulletList1}</Text>
-                            <Text style={styles.BulletList}>• {props.BulletList2}</Text>
-                            <Text style={styles.BulletList}>• {props.BulletList3}</Text>
-                            <Text style={styles.BulletList}>• {props.BulletList4}</Text>
-                        </View>
+                            <Text style={styles.BulletList}>{props.BulletList1}</Text>
+                            <Text style={styles.BulletList}>{props.BulletList2}</Text>
+                            <Text style={styles.BulletList}>{props.BulletList3}</Text>
+                            <Text style={styles.BulletList}>{props.BulletList4}</Text>
                     </View>
-                    <View style={{position: 'relative'}}>
+                    <View>
                         <Image
                             source={props.image}
                             style={styles.image}
@@ -41,9 +41,11 @@ interface CardProps {
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 60
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 60,
+        left: (Dimensions.get('window').width / 2) - 225,
     },
     image: {
         width: 200,
@@ -64,8 +66,6 @@ const styles = StyleSheet.create({
         fontSize: 33,
         marginLeft: 110,
         marginTop: 15,
-        justifyContent: "center",
-        alignItems: "center",
     },
     underline: {
         borderBottomWidth: 1,
@@ -77,5 +77,5 @@ const styles = StyleSheet.create({
         fontSize: 15,
         marginTop: 13,
         marginLeft: 110,
-    }
+    },
 })
