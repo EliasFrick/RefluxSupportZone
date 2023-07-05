@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import {View, StyleSheet} from "react-native";
 import Video from "react-native-video";
+import StandartButton from "./StandartButton";
 
 export default function VideoCard() {
 
-    const Luciano = "C:\\Users\\Elias.Frick\\Downloads\\Luciano Video.mp4"
+    const [videoSource, setVideoSource] = useState(false)
+    const Luciano = "../components/Luciano.mp4"
+
+    function test() {
+        setVideoSource(true)
+    }
 
     return(
         <View>
-            <Video source={{uri: Luciano}}   // Can be a URL or a local file.
-                   style={styles.backgroundVideo} />
+            {/*<Video source={require('./Luciano.mp4')} style={{ width: 300, height: 200 }} />*/}
+            {videoSource && <Video source={require('./Luciano.mp4')} style={{ width: 300, height: 200 }} />}
+            <StandartButton text={"Video Anzeigen"} onPress={test} />
+
         </View>
     )
 }

@@ -14,7 +14,7 @@ export default function ChooseBlogScreen () {
     return (
         <Stack.Navigator>
             <Stack.Screen name="ChooseBlogScreen" component={Blog} options={{headerShown: false}} />
-            <Stack.Screen name="RefluxIformations" component={RefluxInformationen} />
+            <Stack.Screen name="RefluxInformations" component={RefluxInformationen} />
             <Stack.Screen name="Doctor" component={Doctor} />
             <Stack.Screen name="OPVerfahren" component={OPVerfahren} />
             <Stack.Screen name="Medikamente" component={Medikamente} />

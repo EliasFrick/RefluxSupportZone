@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/pictures/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.elias187.RefluxSupportZone"
     },
     "web": {
       "favicon": "./src/assets/pictures/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a0e625bc-f00c-484a-b0ea-43df30441adf"
+      }
     }
   }
 }
