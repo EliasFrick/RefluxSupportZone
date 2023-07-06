@@ -41,7 +41,6 @@ interface CardProps {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 60,
@@ -59,7 +58,6 @@ const styles = StyleSheet.create({
         width: 400,
         height: 230,
         borderRadius: 40,
-
     },
     buttonText: {
         color: "white",

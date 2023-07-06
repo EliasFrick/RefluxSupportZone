@@ -36,9 +36,9 @@ const Exercises: React.FC<Props> = ({navigation}) => {
     return (
         <View>
             <Text>Videos:</Text>
-            <VideoCard video={LucianoVideo} onPress={navigateToFirstExercise}/>
-            <VideoCard video={OlympiaParkVideo} onPress={navigateToSecondExercise}/>
-            <VideoCard video={AutoVideo} onPress={navigateToThirdExercise}/>
+            <VideoCard title={'Übung 1'} video={LucianoVideo} color={'blue'} BulletList1={'• Info 1'} BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToFirstExercise}/>
+            <VideoCard title={'Übung 2'} video={OlympiaParkVideo} color={'red'} BulletList1={'• Info 1'} BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToSecondExercise}/>
+            <VideoCard title={'Übung 3'} video={AutoVideo} color={'green'} BulletList1={'• Info 1'} BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToThirdExercise}/>
         </View>
     )
 }
