@@ -5,7 +5,8 @@ import CustomDrawer from "./CustomDrawer";
 //Import Screens
 import StartScreen from "../screens/StartScreen";
 import ChooseBlogScreen from "./ChooseBlogScreen";
-import Exercises from "../screens/Exercises";
+import {ChooseExercise} from "./ChooseBlogScreen";
+import Exercises from "../screens/Exercises/Exercises";
 import Nutrition from "../screens/Nutrition";
 import {StyleSheet, View} from "react-native";
 // @ts-ignore
@@ -61,7 +62,7 @@ const Sidebar = () => {
                 <Drawer.Screen
                     key={"Exercises"}
                     name={"Übungen"}
-                    component={Exercises}
+                    component={ChooseExercise}
                     options={{
                         drawerIcon: () => (
                             <View style={styles.iconContainer}>

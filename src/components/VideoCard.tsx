@@ -1,25 +1,50 @@
-import React, {useState} from "react";
-import {View, StyleSheet} from "react-native";
-import Video from "react-native-video";
+import React, {useRef, useState} from "react";
+import {View, StyleSheet, TouchableWithoutFeedback, ImageSourcePropType, TouchableOpacity} from "react-native";
 import StandartButton from "./StandartButton";
+// import Video from 'react-native-video';
+import { Video } from 'expo-av';
 
-export default function VideoCard() {
 
-    const [videoSource, setVideoSource] = useState(false)
-    const Luciano = "../components/Luciano.mp4"
+export default function VideoCard(props: VideoProps) {
 
-    function test() {
-        setVideoSource(true)
-    }
+    const [isPlaying, setIsPlaying] = useState(false);
+    const videoRef = useRef<Video>(null);
+    const Luciano = require("../components/Luciano.mp4")
+
+    const handleLongPress  = () => {
+        setIsPlaying(true);
+    };
+
+    const handlePressOut = () => {
+        setIsPlaying(false);
+        videoRef.current?.setPositionAsync(0);
+    };
+
 
     return(
         <View>
-            {/*<Video source={require('./Luciano.mp4')} style={{ width: 300, height: 200 }} />*/}
-            {videoSource && <Video source={require('./Luciano.mp4')} style={{ width: 300, height: 200 }} />}
-            <StandartButton text={"Video Anzeigen"} onPress={test} />
-
+            <TouchableWithoutFeedback onPress={props.onPress} onLongPress={handleLongPress} onPressOut={handlePressOut}>
+                <View>
+                    <Video
+                        ref={videoRef}
+                        // @ts-ignore
+                        source={props.video}
+                        // source={require('../assets/videos/LucianoVideo.mp4')}
+                        style={{ width: 300, height: 200 }}
+                        // useNativeControls
+                        isMuted={true}
+                        shouldPlay={isPlaying}
+                        // shouldPlay={true}
+                    />
+                </View>
+            </TouchableWithoutFeedback>
         </View>
     )
+}
+
+interface VideoProps {
+    video: string,
+    onPress: () => void;
 }
 
 const styles = StyleSheet.create({

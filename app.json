@@ -4,7 +4,7 @@
     "slug": "RefluxSupportZone",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/pictures/icon.png",
+    "icon": "./src/assets/pictures/Reflux-Logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/assets/pictures/splash.png",

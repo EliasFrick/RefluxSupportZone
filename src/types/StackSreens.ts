@@ -5,3 +5,10 @@ export type BlogScreen = {
     OPVerfahren: undefined;
     Medikamente: undefined;
 }
+
+export type ExerciseScreen = {
+    ExerciseScreen: undefined;
+    FirstExercise: undefined;
+    SecondExercise: undefined;
+    ThirdExercise: undefined
+}
