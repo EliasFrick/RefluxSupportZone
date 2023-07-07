@@ -1,16 +1,15 @@
 import React from "react";
-import {Text, View} from "react-native";
+import {ScrollView, Text, View} from "react-native";
 import VideoCard from "../../components/VideoCard";
-// import Luciano from '../../assets/videos/LucianoVideo.mp4'
 import {ExerciseScreen} from "../../types/StackSreens";
 import {StackNavigationProp} from "@react-navigation/stack";
+import VideoCardKopie from "../../components/VideoCards - Kopire";
 
 type ChooseExerciseScreen = StackNavigationProp<ExerciseScreen, 'ExerciseScreen'>;
 
 type Props = {
     navigation: ChooseExerciseScreen;
 };
-
 
 const Exercises: React.FC<Props> = ({navigation}) => {
 
@@ -28,17 +27,21 @@ const Exercises: React.FC<Props> = ({navigation}) => {
     };
 
     //Videos
-    const LucianoVideo = require('../../assets/videos/LucianoVideo.mp4')
-    const OlympiaParkVideo = require('../../assets/videos/Olympiapark.mp4')
-    const AutoVideo = require('../../assets/videos/AutoVideo.mp4')
+    const FiveMinMeditation = require('../../assets/videos/5MinMeditation.mp4')
+    const ZwerchfellVideo = require('../../assets/videos/EntspannedeinZwerchfell.mp4')
+    const SodbrennVideo = require('../../assets/videos/SodbrennenProbierediesenTrick.mp4')
 
 
     return (
         <View>
-            <Text>Videos:</Text>
-            <VideoCard title={'Übung 1'} video={LucianoVideo} color={'blue'} BulletList1={'• Info 1'} BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToFirstExercise}/>
-            <VideoCard title={'Übung 2'} video={OlympiaParkVideo} color={'red'} BulletList1={'• Info 1'} BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToSecondExercise}/>
-            <VideoCard title={'Übung 3'} video={AutoVideo} color={'green'} BulletList1={'• Info 1'} BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToThirdExercise}/>
+            <ScrollView>
+                <VideoCard title={'Meditation'} video={FiveMinMeditation} color={'blue'} BulletList1={'• Geführte Meditation'}
+                           BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToFirstExercise}/>
+                <VideoCard title={'Zwerchfell entspannen'} video={ZwerchfellVideo} color={'red'} BulletList1={'• Zwerschfell entspannen'}
+                           BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToSecondExercise}/>
+                <VideoCard title={'Sodbrennen'} video={SodbrennVideo} color={'green'} BulletList1={'• Tips gegen Sodbrennen'}
+                           BulletList2={'• Info 2'} BulletList3={'• Info 3'} onPress={navigateToThirdExercise}/>
+            </ScrollView>
         </View>
     )
 }

@@ -8,8 +8,8 @@ const CustomDrawer: React.FC<CustomDrawerProps> = (props) => {
         <View style={{flex: 1}}>
             <DrawerContentScrollView {...props} contentContainerStyle={{backgroundColor: '#8200d6'}}>
                 <ImageBackground source={require('../assets/pictures/StarShopping.jpg')} style={styles.backgroundImage}>
-                    <Image source={require('../assets/pictures/User-Profil.jpg')} style={styles.userImage}/>
-                    <Text style={styles.userName}>User</Text>
+                    <Image source={require('../assets/pictures/Reflux-Logo.png')} style={styles.userImage}/>
+                    <Text style={styles.userName}>RefluxSupportZone</Text>
                 </ImageBackground>
                 <View style={styles.draweritemList}>
                     <DrawerItemList  {...props} />

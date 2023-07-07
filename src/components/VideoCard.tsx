@@ -6,13 +6,17 @@ import {Video} from 'expo-av';
 
 export default function VideoCard(props: VideoProps) {
 
+
+    //Video starten und Pausieren
     const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef<Video>(null);
 
+    //Video abspielen, wenn lange auf den Container gedrückt wird
     const handleLongPress = () => {
         setIsPlaying(true);
     };
 
+    //Video von vorne zeigen, wenn losgelassen wird
     const handlePressOut = () => {
         setIsPlaying(false);
         videoRef.current?.setPositionAsync(0);
@@ -38,11 +42,16 @@ export default function VideoCard(props: VideoProps) {
                         // useNativeControls
                         isMuted={true}
                         shouldPlay={isPlaying}
+                        usePoster={false}
+                        posterSource={require('../assets/pictures/Reflux-Logo.png')}
+                        // @ts-ignore
+                        resizeMode={'cover'}
                     />
                 </View>
         </TouchableWithoutFeedback>
     )
 }
+
 
 interface VideoProps {
     title: string;
@@ -55,20 +64,23 @@ interface VideoProps {
     color: string
 }
 
+const { width, height } = Dimensions.get('window');
+
+
 const styles = StyleSheet.create({
     container: {
+        marginTop: 60,
+        left: (width / 2) - 210,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 60,
-        left: (Dimensions.get('window').width / 2) - 225,
     },
     video: {
         width: 250,
         height: 230,
         position: 'absolute',
         bottom: 30,
-        right: 310,
-        borderRadius: 40
+        right: 350,
+        borderRadius: 40,
     },
     button: {
         width: 400,
@@ -78,7 +90,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: "white",
         fontSize: 33,
-        marginLeft: 110,
+        marginLeft: 150,
         marginTop: 15,
     },
     underline: {
@@ -90,6 +102,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 15,
         marginTop: 13,
-        marginLeft: 110,
+        marginLeft: 150,
     },
 })

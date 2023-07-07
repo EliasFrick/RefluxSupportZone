@@ -39,12 +39,15 @@ interface CardProps {
     color: string
 }
 
+//Bildschirmgröße für das Styling
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
-        alignItems: 'center',
         marginTop: 60,
         left: (Dimensions.get('window').width / 2) - 225,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     image: {
         width: 200,
