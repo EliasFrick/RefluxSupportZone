@@ -5,10 +5,10 @@
     "description": "This is a place where you can inform yourself about your reflux disease with exercises which helps against the pain.",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/pictures/Reflux-Logo.png",
+    "icon": "./src/assets/pictures/Reflux-icon.jpg",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/pictures/Reflux-Logo.png",
+      "image": "./src/assets/pictures/Reflux-icon.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

@@ -36,7 +36,7 @@ const Blog: React.FC<Props> = ({navigation}) => {
     return (
         <View>
             <ScrollView>
-                <Card title={'What is Reflux'} BulletList1={'• All informations about Reflux'} image={RefluxLogo} onPress={navigateToWhatIsRefluxScreen} color={'#0995ea'}/>
+                <Card title={'Was ist Reflux'} BulletList1={'• All informations about Reflux'} BulletList2={'• All informations about Reflux'} image={RefluxLogo} onPress={navigateToWhatIsRefluxScreen} color={'#0995ea'}/>
                 <Card title={'Ärzte'} BulletList1={'• Testimonials with doctors'} image={DoctorsLogo} onPress={navigateToDoctorScreen} color={'#fe635f'}/>
                 <Card title={'OP Verfahren'} BulletList1={'• Tips for the operation'} image={OPLogo} onPress={navigateToOPVerfahrenScreen} color={'#05d4b8'}/>
                 <Card title={'Medication'} BulletList1={'• Best Medications'} image={MedicationLogo} onPress={navigateToMedikamenteScreen} color={'red'}/>
