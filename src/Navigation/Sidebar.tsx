@@ -11,11 +11,17 @@ import Nutrition from "../screens/Nutrition";
 import {StyleSheet, View} from "react-native";
 // @ts-ignore
 import Icon from 'react-native-vector-icons/Ionicons';
+import {Dimensions} from "react-native";
 
 
 const Drawer = createDrawerNavigator();
 
+const {width} = Dimensions.get("window");
+const sidebarLabelSize = 0.05
+
 const Sidebar = () => {
+
+
     return (
         <NavigationContainer>
             <Drawer.Navigator
@@ -28,7 +34,7 @@ const Sidebar = () => {
                     drawerInactiveTintColor: "#333",
                     drawerLabelStyle: {
                         marginLeft: 0, // Set the left margin to 0
-                        fontSize: 15,
+                        fontSize: width * sidebarLabelSize,
                         textAlign: 'left',
                     },
                 }}
