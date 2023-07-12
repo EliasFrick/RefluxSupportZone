@@ -21,13 +21,13 @@ const ImageCards = () => {
                     <View style={styles.row}>
                         <View style={[styles.card, {marginRight: 1, backgroundColor: '#f9eec0'}]}>
                             <View style={styles.textContainer}>
-                                <Text style={styles.CardText}>Platzhalter</Text>
+                                <Text style={styles.CardText}>Reflux</Text>
                             </View>
                             <Image source={Refluxtransparent} style={styles.image}/>
                         </View>
                         <View style={[styles.card, {backgroundColor: '#fadcc3'}]}>
                             <View style={styles.textContainer}>
-                                <Text style={styles.CardText}>Platzhalter</Text>
+                                <Text style={styles.CardText}>Meditation</Text>
                             </View>
                             <Image source={Meditation} style={styles.image}/>
                         </View>
@@ -35,13 +35,13 @@ const ImageCards = () => {
                     <View style={styles.row}>
                         <View style={[styles.card, {marginRight: 1, backgroundColor: '#f9eec0'}]}>
                             <View style={styles.textContainer}>
-                                <Text style={styles.CardText}>Platzhalter</Text>
+                                <Text style={styles.CardText}>Ärzte</Text>
                             </View>
                             <Image source={Krankenhaus} style={styles.image}/>
                         </View>
                         <View style={[styles.card, {backgroundColor: '#dafbbe'}]}>
                             <View style={styles.textContainer}>
-                                <Text style={styles.CardText}>Platzhalter</Text>
+                                <Text style={styles.CardText}>Medikamente</Text>
                             </View>
                             <Image source={Medikamente} style={styles.image}/>
                         </View>
@@ -49,7 +49,7 @@ const ImageCards = () => {
                     <View style={styles.row}>
                         <View style={[styles.card, {marginRight: 1, backgroundColor: '#d0e0fa'}]}>
                             <View style={styles.textContainer}>
-                                <Text style={styles.CardText}>Platzhalter</Text>
+                                <Text style={styles.CardText}>Operationen</Text>
                             </View>
                             <Image source={Krankenhaus} style={styles.image}/>
                         </View>
@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
         marginTop: ScreenHeight * 0.02
     },
     image: {
-        // flex: 1,
         width: 140,
         height: 140,
         resizeMode: 'contain',
@@ -149,8 +148,10 @@ const styles = StyleSheet.create({
     CardText: {
         color: 'black',
         textAlign: 'center',
-        fontSize: width * cardTextSize
-        // justifyContent: 'center'
+        fontSize: width * cardTextSize,
+        marginTop: "20%",
+        position: 'absolute',
+        marginLeft: "10%"
     },
     textContainer:{
         // flex: 1,
