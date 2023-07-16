@@ -8,7 +8,7 @@ import ChooseBlogScreen from "./ChooseBlogScreen";
 import {ChooseExercise} from "./ChooseBlogScreen";
 import Exercises from "../screens/Exercises/Exercises";
 import Nutrition from "../screens/Nutrition";
-import {StyleSheet, View} from "react-native";
+import {StyleSheet, View, Text} from "react-native";
 // @ts-ignore
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Dimensions} from "react-native";
@@ -20,8 +20,6 @@ const {width} = Dimensions.get("window");
 const sidebarLabelSize = 0.05
 
 const Sidebar = () => {
-
-
     return (
         <NavigationContainer>
             <Drawer.Navigator
@@ -36,7 +34,7 @@ const Sidebar = () => {
                         marginLeft: 0, // Set the left margin to 0
                         fontSize: width * sidebarLabelSize,
                         textAlign: 'left',
-                    },
+                    }
                 }}
             >
                 <Drawer.Screen
@@ -50,6 +48,8 @@ const Sidebar = () => {
                             </View>
 
                         ),
+                        headerStyle: styles.topBackStyle,
+                        headerTintColor: "white"
                     }}
                 />
                 <Drawer.Screen
@@ -63,6 +63,8 @@ const Sidebar = () => {
                             </View>
 
                         ),
+                        headerStyle: styles.topBackStyle,
+                        headerTintColor: "white"
                     }}
                 />
                 <Drawer.Screen
@@ -76,6 +78,8 @@ const Sidebar = () => {
                             </View>
 
                         ),
+                        headerStyle: styles.topBackStyle,
+                        headerTintColor: "white"
                     }}
                 />
                 <Drawer.Screen
@@ -88,6 +92,8 @@ const Sidebar = () => {
                                 <Icon name={"fast-food-outline"} size={32} color={"black"}/>
                             </View>
                         ),
+                        headerStyle: styles.topBackStyle,
+                        headerTintColor: "white"
                     }}
                 />
             </Drawer.Navigator>
@@ -103,4 +109,10 @@ const styles = StyleSheet.create({
         width: 32, // anpassen, je nachdem wie breit das Icon sein soll
         alignItems: 'flex-start',
     },
+    topFrontStyle: {
+        color: "white"
+    },
+    topBackStyle: {
+        backgroundColor: "#1f1f1f",
+    }
 })
