@@ -2,7 +2,7 @@ import React from "react";
 import {Dimensions, Image, ImageSourcePropType, ScrollView, StyleSheet, Text, View} from "react-native";
 import Refluxtransparent from '../assets/pictures/Reflux-transparent.png'
 import Meditation from '../assets/pictures/MeditierendeFrau-transparent.png'
-import Krankenhaus from '../assets/pictures/Krankenhaus-transparent2.png'
+import Krankenhaus from '../assets/pictures/Krankenhaus-transpraent-remove.png'
 import Medikamente from '../assets/pictures/Medikamente-transparent.png'
 
 const ScreenWidth = Dimensions.get('window').width;
@@ -10,7 +10,7 @@ const ScreenHeight = Dimensions.get('window').height;
 const {width} = Dimensions.get('window');
 const CardWidth = ScreenWidth * 0.45;
 const titleSize = 0.07;
-const cardTextSize = 0.05;
+const cardTextSize = 0.04;
 
 const ImageCards = () => {
     return (
@@ -143,7 +143,8 @@ const styles = StyleSheet.create({
         width: 140,
         height: 140,
         resizeMode: 'contain',
-        marginLeft: "70%"
+        marginLeft: "70%",
+        marginTop: "10%"
     },
     CardText: {
         color: 'black',

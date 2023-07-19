@@ -3,7 +3,6 @@ import {ScrollView, Text, View} from "react-native";
 import VideoCard from "../../components/VideoCard";
 import {ExerciseScreen} from "../../types/StackSreens";
 import {StackNavigationProp} from "@react-navigation/stack";
-import VideoCardKopie from "../../components/VideoCards - Kopire";
 
 type ChooseExerciseScreen = StackNavigationProp<ExerciseScreen, 'ExerciseScreen'>;
 

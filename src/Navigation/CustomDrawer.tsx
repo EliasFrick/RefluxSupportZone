@@ -6,7 +6,7 @@ import {DrawerContentScrollView, DrawerItemList} from "@react-navigation/drawer"
 const CustomDrawer: React.FC<CustomDrawerProps> = (props) => {
     return (
         <View style={{flex: 1}}>
-            <DrawerContentScrollView {...props} contentContainerStyle={{backgroundColor: '#8200d6'}}>
+            <DrawerContentScrollView {...props} contentContainerStyle={{backgroundColor: '#6a7980'}}>
                 <ImageBackground source={require('../assets/pictures/StarShopping.jpg')} style={styles.backgroundImage}>
                     <Image source={require('../assets/pictures/Reflux-icon.jpg')} style={styles.userImage}/>
                     <Text style={styles.userName}>RefluxSupportZone</Text>
@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     userName: {
-        color: '#fff',
+        color: 'white',
         fontSize: 18,
     },
     draweritemList:{
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#6a7980',
         paddingTop: 10
     }
 })

@@ -10,6 +10,7 @@ import Exercises from "../screens/Exercises/Exercises";
 import FirstExercise from "../screens/Exercises/screens/FirstExercise";
 import SecondExercise from "../screens/Exercises/screens/SecondExercise";
 import ThirdExercise from "../screens/Exercises/screens/ThirdExercise";
+import BlogNew from "../screens/Blog/BlogNew";
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,7 @@ const Stack = createStackNavigator();
 export default function ChooseBlogScreen () {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="ChooseBlogScreen" component={Blog} options={{headerShown: false}} />
+            <Stack.Screen name="ChooseBlogScreen" component={BlogNew} options={{headerShown: false}} />
             <Stack.Screen name="RefluxInformations" component={RefluxInformationen} />
             <Stack.Screen name="Doctor" component={Doctor} />
             <Stack.Screen name="OPVerfahren" component={OPVerfahren} />
