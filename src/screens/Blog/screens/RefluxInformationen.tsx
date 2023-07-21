@@ -1,14 +1,21 @@
 import React from "react";
-import {View, Text, StyleSheet} from "react-native";
-import {refluxBeschreibung, wasIstReflux, unterstuetzendeMassnahmen, beschreibungUnterstuetzendeMassnahmen} from "../../../constants/BlogTexts";
+import {ScrollView, StyleSheet, Text, View} from "react-native";
+import {
+    beschreibungUnterstuetzendeMassnahmen,
+    refluxBeschreibung,
+    unterstuetzendeMassnahmen,
+    wasIstReflux
+} from "../../../constants/BlogTexts";
 
 export default function RefluxInformationen() {
-    return(
+    return (
         <View>
-            <Text style={styles.mainTitle}>{wasIstReflux}</Text>
-            <Text style={styles.descriptionText}>{refluxBeschreibung}</Text>
-            <Text style={styles.Title}>{unterstuetzendeMassnahmen}</Text>
-            <Text style={styles.descriptionText}>{beschreibungUnterstuetzendeMassnahmen}</Text>
+            <ScrollView>
+                <Text style={styles.mainTitle}>{wasIstReflux}</Text>
+                <Text style={styles.descriptionText}>{refluxBeschreibung}</Text>
+                <Text style={styles.Title}>{unterstuetzendeMassnahmen}</Text>
+                <Text style={styles.descriptionText}>{beschreibungUnterstuetzendeMassnahmen}</Text>
+            </ScrollView>
         </View>
     )
 }
